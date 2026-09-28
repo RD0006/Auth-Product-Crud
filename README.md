@@ -61,3 +61,5 @@ The assignment explicitly requires validation for product name, price and stock,
 - name
 - price
 - stock
+
+
