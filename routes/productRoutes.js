@@ -34,10 +34,11 @@ router.post(
       const { name, price, stock } = req.body;
 
       const product = await Product.create({
-        name,
-        price,
-        stock
-      });
+      name,
+      price,
+      stock,
+      user: req.user.id
+    });
 
       res.status(201).json(product);
     } catch (error) {
@@ -47,9 +48,11 @@ router.post(
 );
 
 // GET /api/products
-router.get("/", async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
   try {
-    const products = await Product.find();
+    const products = await Product.find({
+      user: req.user.id
+    });
     res.json(products);
   } catch (error) {
     res.status(500).json({ message: "Server error" });
@@ -57,19 +60,32 @@ router.get("/", async (req, res) => {
 });
 
 // GET /api/products/:id
-router.get("/:id", idValidation, handleValidation, async (req, res) => {
-  try {
-    const product = await Product.findById(req.params.id);
+router.get(
+  "/:id",
+  authenticate,
+  idValidation,
+  handleValidation,
+  async (req, res) => {
+    try {
+      const product = await Product.findOne({
+        _id: req.params.id,
+        user: req.user.id
+      });
 
-    if (!product) {
-      return res.status(404).json({ message: "Product not found" });
+      if (!product) {
+        return res.status(404).json({
+          message: "Product not found"
+        });
+      }
+
+      res.json(product);
+    } catch (error) {
+      res.status(500).json({
+        message: "Server error"
+      });
     }
-
-    res.json(product);
-  } catch (error) {
-    res.status(500).json({ message: "Server error" });
   }
-});
+);
 
 // PUT /api/products/:id
 router.put(
@@ -80,15 +96,21 @@ router.put(
   handleValidation,
   async (req, res) => {
     try {
-      const product = await Product.findByIdAndUpdate(
-        req.params.id,
-        {
-          name: req.body.name,
-          price: req.body.price,
-          stock: req.body.stock
-        },
-        { new: true, runValidators: true }
-      );
+      const product = await Product.findOneAndUpdate(
+      {
+        _id: req.params.id,
+        user: req.user.id
+      },
+      {
+        name: req.body.name,
+        price: req.body.price,
+        stock: req.body.stock
+      },
+      {
+        new: true,
+        runValidators: true
+      }
+    );
 
       if (!product) {
         return res.status(404).json({ message: "Product not found" });
@@ -109,7 +131,10 @@ router.delete(
   handleValidation,
   async (req, res) => {
     try {
-      const product = await Product.findByIdAndDelete(req.params.id);
+      const product = await Product.findOneAndDelete({
+        _id: req.params.id,
+        user: req.user.id
+      });
 
       if (!product) {
         return res.status(404).json({ message: "Product not found" });

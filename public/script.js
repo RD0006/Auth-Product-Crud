@@ -257,7 +257,11 @@ async function loadProducts() {
   `;
 
   try {
-    const response = await fetch("/api/products");
+    const response = await fetch("/api/products", {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
     const products = await response.json();
 
     if (!response.ok) {
