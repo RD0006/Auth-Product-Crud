@@ -1,12 +1,10 @@
 # Authentication & Product CRUD
 
-A full-stack authentication and product management application built as part of the **Sheryians Coding School assignment**.
+Live Link: https://auth-product-crud.onrender.com
+
+A full-stack authentication and product management application built as part of an assignment given at Sheryians Coding School.
 
 The project provides user registration and login with JWT authentication, protected product operations, MongoDB persistence, input validation, and a simple responsive frontend.
-
-## Live Link
-
-https://auth-product-crud.onrender.com/index.html
 
 ## Features
 
