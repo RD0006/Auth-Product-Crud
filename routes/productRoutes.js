@@ -101,11 +101,13 @@ router.put(
         _id: req.params.id,
         user: req.user.userId
       },
+      
       {
         name: req.body.name,
         price: req.body.price,
         stock: req.body.stock
       },
+      
       {
         new: true,
         runValidators: true
