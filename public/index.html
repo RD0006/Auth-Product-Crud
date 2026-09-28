@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProductHub - Login</title>
+  <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/thumbnails/024/280/427/small/sparkle-star-white-png.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+
+  <main class="auth-container">
+
+    <div class="brand">
+      <div class="brand-icon">
+        <span>✦</span>
+      </div>
+
+      <h1>Product<span>Hub</span></h1>
+
+      <p>
+        One place to manage, organize, and grow your products.
+      </p>
+    </div>
+
+    <section class="auth-card">
+
+      <div class="auth-header">
+        <h2>Login</h2>
+      </div>
+
+      <form id="loginForm">
+
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input
+            id="loginEmail"
+            type="email"
+            placeholder="you@example.com"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input
+            id="loginPassword"
+            type="password"
+            placeholder="Enter your password"
+            required
+          >
+        </div>
+
+        <button type="submit" class="primary-button full-width">
+          Login
+        </button>
+
+      </form>
+
+      <p id="loginMessage" class="message"></p>
+
+      <div class="auth-footer">
+        Don't have an account?
+        <a href="register.html">Create an account</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

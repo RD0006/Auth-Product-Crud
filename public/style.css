@@ -1,0 +1,662 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #151a24;
+  --surface: #1c2330;
+  --surface-soft: #222a38;
+
+  --text: #edf1f7;
+  --muted: #9aa6b7;
+
+  --border: #303a4a;
+
+  --primary: #7c8cff;
+  --primary-dark: #96a3ff;
+
+  --accent-blue: #6fa8dc;
+  --accent-green: #73b89a;
+  --accent-yellow: #d6b56d;
+  --accent-pink: #c98da6;
+
+  --danger: #d98585;
+  --success: #73b89a;
+
+  --shadow: 0 10px 30px rgba(4, 8, 15, 0.22);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+  letter-spacing: 0.1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   AUTH
+========================= */
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 20px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(124, 140, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 85% 80%, rgba(115, 184, 154, 0.06), transparent 30%),
+    #151a24;
+}
+
+.auth-container {
+  width: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+}
+
+.brand {
+  text-align: center;
+  padding: 50px;
+}
+
+.brand-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #6978dc,
+    #9274b8
+  );
+
+  color: #ffffff;
+
+  font-size: 27px;
+  font-weight: bold;
+
+  box-shadow:
+    0 10px 25px rgba(85, 98, 180, 0.22),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
+
+}
+
+.brand h1 {
+  font-size: 30px;
+  letter-spacing: -0.8px;
+  margin-bottom: 9px;
+}
+
+.brand h1 span {
+  color: var(--primary);
+}
+
+.brand p {
+  max-width: 330px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.brand-badges {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.brand-badges span {
+  padding: 5px 9px;
+
+  background: #252d3d;
+  color: #aeb9ff;
+
+  border: 1px solid #35405a;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.auth-card {
+  width: 600px;
+  padding: 25px 40px;
+}
+
+.auth-header {
+  margin-bottom: 15px;
+}
+
+.auth-header h2 {
+  font-size: 24px;
+  margin-bottom: 7px;
+}
+
+.auth-header p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-group {
+  margin-bottom: 17px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #dce2eb;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #354052;
+  border-radius: 9px;
+  outline: none;
+  background: #202836;
+  color: var(--text);
+  transition: 0.2s ease;
+}
+
+input::placeholder {
+  color: #788598;
+}
+
+input:focus {
+  border-color: #7c8cff;
+  box-shadow: 0 0 0 3px rgba(124, 140, 255, 0.10);
+}
+
+input:hover {
+  border-color: #465268;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-button,
+.secondary-button,
+.logout-button {
+  border: none;
+  border-radius: 9px;
+  padding: 11px 16px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.primary-button {
+  background: #6676df;
+  color: #ffffff;
+}
+
+.primary-button:hover {
+  background: #7c8cff;
+}
+
+.secondary-button {
+  background: #252d3b;
+  color: #dce3ed;
+  border: 1px solid #394556;
+}
+
+.secondary-button:hover {
+  background: #2c3545;
+}
+
+.logout-button {
+  background: #34252b;
+  color: #df9999;
+  border: 1px solid #49333b;
+}
+
+.logout-button:hover {
+  background: #423039;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.auth-footer a {
+  color: #9aa6ff;
+  font-weight: 600;
+}
+
+.message {
+  min-height: 20px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 100px;
+  background: #1a202c;
+  border-bottom: 1px solid #303a4a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #8f9bae;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #a7b0ff;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.app-page {
+  background: var(--bg);
+}
+
+.dashboard-container {
+  width: 90%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 45px 0 70px;
+}
+
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.page-heading h1,
+.profile-heading h1 {
+  font-size: 34px;
+  margin: 5px 0 8px;
+}
+
+.page-heading p:not(.eyebrow),
+.profile-heading p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.eyebrow {
+  color: #8e9aff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+/* =========================
+   PRODUCT FORM
+========================= */
+
+.add-product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.section-title h2 {
+  font-size: 20px;
+  margin-top: 4px;
+}
+
+.section-title p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.product-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 15px;
+  align-items: end;
+}
+
+.form-action {
+  padding-bottom: 17px;
+}
+
+.product-form .form-group {
+  margin-bottom: 0;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section {
+  margin-top: 20px;
+}
+
+.product-count {
+  background: #293044;
+  color: #aeb8ff;
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.product {
+  background: #1c2330;
+  border: 1px solid #303a4a;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 18px rgba(4, 8, 15, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(4, 8, 15, 0.24);
+}
+
+.product-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #293249;
+  color: #9eabff;
+
+  border: 1px solid #3a4660;
+  border-radius: 11px;
+
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.product h3 {
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.product-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.product-detail {
+  background: #222a38;
+  border-radius: 9px;
+  padding: 10px;
+}
+
+.product-detail span {
+  display: block;
+  color: #8793a6;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.product-detail strong {
+  font-size: 14px;
+  color: #e2e7ef;
+}
+
+.product-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.product-actions button {
+  flex: 1;
+}
+
+.edit-button,
+.delete-button {
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+}
+
+.edit-button {
+  background: #293149;
+  color: #a6b1ff;
+  border: 1px solid #3b4662;
+}
+
+.delete-button {
+  background: #34252b;
+  color: #dc9999;
+  border: 1px solid #49343c;
+}
+
+.empty-products {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--surface);
+  border: 1px dashed #394557;
+  border-radius: 15px;
+  color: var(--muted);
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-container {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 55px 0;
+}
+
+.profile-heading {
+  margin-bottom: 30px;
+}
+
+.profile-card {
+  background: #1c2330;
+  border: 1px solid #303a4a;
+  border-radius: 18px;
+  padding: 35px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+
+  background: #293149;
+  color: #a6b1ff;
+
+  border: 1px solid #3b4662;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-field {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-field:last-child {
+  border-bottom: none;
+}
+
+.profile-field span {
+  display: block;
+  color: #8793a6;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.profile-field strong {
+  font-size: 16px;
+  color: #e5e9f0;
+}
+
+.protected-page {
+  visibility: hidden;
+}
+
+.protected-page.authenticated {
+  visibility: visible;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-action {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    height: auto;
+    padding: 15px 5%;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .auth-card {
+    padding: 24px;
+  }
+
+  .dashboard-container,
+  .profile-container {
+    padding-top: 30px;
+  }
+}

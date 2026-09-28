@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProductHub - Profile</title>
+  <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/thumbnails/024/280/427/small/sparkle-star-white-png.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="app-page protected-page">
+
+  <header class="navbar">
+
+    <a href="dashboard.html" class="navbar-brand">
+      <span class="brand-icon small">✦</span>
+      <span>ProductHub</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html" class="active">Profile</a>
+      <button id="logoutButton" class="logout-button">Logout</button>
+    </nav>
+
+  </header>
+
+  <main class="profile-container">
+
+    <section class="profile-heading">
+      <p class="eyebrow">ACCOUNT</p>
+      <h1>My Profile</h1>
+      <p>View your account information.</p>
+    </section>
+
+    <section class="profile-card">
+
+      <div class="profile-avatar" id="profileAvatar">
+        U
+      </div>
+
+      <div class="profile-info">
+
+        <div class="profile-field">
+          <span>Name</span>
+          <strong id="profileName">Loading...</strong>
+        </div>
+
+        <div class="profile-field">
+          <span>Email</span>
+          <strong id="profileEmail">Loading...</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+    <p id="userMessage" class="message"></p>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

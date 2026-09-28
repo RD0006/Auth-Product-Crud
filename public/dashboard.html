@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProductHub - Dashboard</title>
+  <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/thumbnails/024/280/427/small/sparkle-star-white-png.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="app-page protected-page">
+
+  <header class="navbar">
+
+    <a href="dashboard.html" class="navbar-brand">
+      <span class="brand-icon small">✦</span>
+      <span>ProductHub</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="profile.html">Profile</a>
+      <button id="logoutButton" class="logout-button">Logout</button>
+    </nav>
+
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="page-heading">
+      <div>
+        <p class="eyebrow">PRODUCT MANAGEMENT</p>
+        <h1>Dashboard</h1>
+        <p>Manage your products from one place.</p>
+      </div>
+
+      <button onclick="loadProducts()" class="secondary-button">
+        ↻ Refresh
+      </button>
+    </section>
+
+    <section class="add-product-card">
+
+      <div class="section-title">
+        <div>
+          <h2>Add Product</h2>
+          <p>Create a new product for your store.</p>
+        </div>
+      </div>
+
+      <form id="productForm" class="product-form">
+
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input
+            id="productName"
+            type="text"
+            placeholder="Enter product name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="productPrice">Price</label>
+          <input
+            id="productPrice"
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="0.00"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="productStock">Stock</label>
+          <input
+            id="productStock"
+            type="number"
+            min="0"
+            placeholder="0"
+            required
+          >
+        </div>
+
+        <div class="form-action">
+          <button type="submit" class="primary-button">
+            + Add Product
+          </button>
+        </div>
+
+      </form>
+
+      <p id="productMessage" class="message"></p>
+
+    </section>
+
+    <section class="products-section">
+
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">YOUR INVENTORY</p>
+          <h2>Products</h2>
+        </div>
+
+        <span id="productCount" class="product-count">0 products</span>
+      </div>
+
+      <div id="products" class="products-grid"></div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

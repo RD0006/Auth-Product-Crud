@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProductHub - Register</title>
+  <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/thumbnails/024/280/427/small/sparkle-star-white-png.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+
+  <main class="auth-container">
+
+    <div class="brand">
+      <div class="brand-icon">
+        <span>✦</span>
+      </div>
+
+      <h1>Product<span>Hub</span></h1>
+
+      <p>
+        One place to manage, organize, and grow your products.
+      </p>
+    </div>
+
+    <section class="auth-card">
+
+      <div class="auth-header">
+        <h2>Create account</h2>
+      </div>
+
+      <form id="registerForm">
+
+        <div class="form-group">
+          <label for="registerName">Name</label>
+          <input
+            id="registerName"
+            type="text"
+            placeholder="Your name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="registerEmail">Email</label>
+          <input
+            id="registerEmail"
+            type="email"
+            placeholder="you@example.com"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <input
+            id="registerPassword"
+            type="password"
+            placeholder="Create a password"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="registerConfirmPassword">Confirm Password</label>
+          <input
+            id="registerConfirmPassword"
+            type="password"
+            placeholder="Confirm your password"
+            required
+          >
+        </div>
+
+        <button type="submit" class="primary-button full-width">
+          Create Account
+        </button>
+
+      </form>
+
+
+      <div class="auth-footer">
+        Already have an account?
+        <a href="index.html">Login</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
