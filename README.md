@@ -4,6 +4,10 @@ A full-stack authentication and product management application built as part of 
 
 The project provides user registration and login with JWT authentication, protected product operations, MongoDB persistence, input validation, and a simple responsive frontend.
 
+## Live Link
+
+https://auth-product-crud.onrender.com/index.html
+
 ## Features
 
 ### Authentication
@@ -413,4 +417,4 @@ Possible future improvements include:
 
 ## License
 
-This project was created for educational and assignment purposes.
+This project is licensed under MIT License. For more details, kindly visit LICENSE File. 
