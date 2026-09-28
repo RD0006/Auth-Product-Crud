@@ -37,7 +37,7 @@ router.post(
       name,
       price,
       stock,
-      user: req.user.id
+      user: req.user.userId
     });
 
       res.status(201).json(product);
@@ -51,7 +51,7 @@ router.post(
 router.get("/", authenticate, async (req, res) => {
   try {
     const products = await Product.find({
-      user: req.user.id
+      user: req.user.userId
     });
     res.json(products);
   } catch (error) {
@@ -69,7 +69,7 @@ router.get(
     try {
       const product = await Product.findOne({
         _id: req.params.id,
-        user: req.user.id
+        user: req.user.userId
       });
 
       if (!product) {
@@ -99,7 +99,7 @@ router.put(
       const product = await Product.findOneAndUpdate(
       {
         _id: req.params.id,
-        user: req.user.id
+        user: req.user.userId
       },
       {
         name: req.body.name,
@@ -133,7 +133,7 @@ router.delete(
     try {
       const product = await Product.findOneAndDelete({
         _id: req.params.id,
-        user: req.user.id
+        user: req.user.userId
       });
 
       if (!product) {
